@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Debugger module</title>
+<!-- for mobile! -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- maximum-scale=1.0, user-scalable=no" ...add to meta tag above to disable zooming for a more native-app feel -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="styles/assignment3.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container"> <!-- fixed-width container (auto-responsive) - also container-fluid for full width container -->
+      <div class="row">
+        <div class="jumbotron">
+      	<!-- full-width responsive massiveness -->
+        <h1>Debugger Module for Node.js</h1>
+        <h2>By Joshua Laurin</h2>    
+        </div>
+        
+        <div class="page-header">
+        <!-- nice grey line header -->
+        <h2>What is Debugger</h2>
+        <p>The debugger module is a TCP-based protocol with a built in debugging client, the debugger module covers Scripts and version. To activate this module all you have to do just add the debug plus the script you want to debug, and if done correctly a prompt should be displayed. Once the module has been activated you can set break points by using one of the following commands setBreakpoint () or sb () and then run execution controls to start debugging. The execution controls are:<br>
+•	run – Runs the script(on the debuggers start)<br>
+•	restart – restarts the script<br>
+•	kill – with kills or terminates the executed script<br>
+</p>
+        </div><!--end of div page header-->
+        </div><!--end of div row-->
+      <div class="row">
+        <div class="page-header">
+            <h3>Setting break points</h3>
+            <p>Using the setBreakpoint function you can target where exactly it will start a break point by inputting one of the following: 
+•	Line - used to set a break point on a specific line
+•	‘fn()’ -  used to set the breakpoint on the first statement of the functions body
+•	‘scriptname.js, 1 can also use cb( … ) -  sets the breakpoint on the first line of the script.
+•	clearBreakpoint(‘scriptname.js’, 1) – used to remove breakpoints on the first line of the script 
+</p>
+            <img src="images/debugged%20syntax.JPG" alt="debugged syntax" id="pic1">
+          </div>  
+      </div>    
+        
+        <div class="row">
+        <div class="page-header">
+            <h3>The stepping commands</h3>
+            <p>Once you have setup a break point you can use the stepping commands to control how the debugger operate on the piece of code being debugged using one of the following commands:<br>
+•	cont, c  - for continuing execution<br>
+•	next, n  - for stepping next or skipping the breakpoint<br>
+•	step, s  - to step into a break point and seeing what happens when the line executes step by step<br>
+•	out, o  - to pull the debugger out of the breakpoint once you have stepped in and have not finished the execution of the line<br>
+•	pause  - to pause the running code<br>
+</p>
+          </div><!--end of div page header-->  
+      </div><!--end of div row-->    
+        
+        
+        <div class="row">
+        <div class="page-header">
+            <h3>Watchers</h3>
+            <p>You can use Watchers for seeing the variable(s) values while the code is debugging and seeing what values each variable is taking as the code is being executed, you can activate this by typing watch(‘my_expression’), and remove a watcher by changing watch to unwatch.</p>
+          </div><!--end of div page header-->  
+      </div><!--end of div row-->
+        
+        <div class="row">
+        <div class="page-header">
+            <h3>Other Commands and Notes</h3>
+            <p>You can run debugger for a script is loaded as show by here...<br></p>
+            <img src="images/preloadedscript.JPG" alt="preloaded" id="pic2"><br><br>
+            <p> As well here are some other commands that debugger can use:<br>
+•   backtrace, bt - Print backtrace of current execution frame<br>
+•   list(5) - List scripts source code with 5 line context (5 lines before and after)<br>
+•   repl - Open debugger's repl for evaluation in debugging script's context<br>
+•   exec expr - Execute an expression in debugging script's context<br></p>
+          </div><!--end of div page header-->  
+      </div><!--end of div row--> 
+        
+        <footer>All information and screen shot gathered and collected from <a href="https://nodejs.org/api/debugger.html">https://nodejs.org/api/debugger.html</a></footer>
+    </div><!--end of div container-->
+</body>
+</html>
