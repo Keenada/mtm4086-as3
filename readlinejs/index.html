@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Readline.js</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+        <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a onclick="scrollToTop()" class="navbar-brand">Readline.js</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right mobileLeft">
+            <li><a onclick="scrollToIntro()">Intro To Readline.js</a></li>
+            <li><a onclick="scrollToEx1()">Example 1</a></li>
+            <li><a onclick="scrollToEx2()">Example 2</a></li>
+            <li><a onclick="scrollToEx3()">Example 3</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>Readline.js</h1>
+            <p><b>Presented by Jordan Koski and Dylan Griffiths</b></p>
+        </div>
+        <div class="container">
+            <div class="row intro">
+                <div class="col-sm-10 col-sm-offset-1 pageSection">
+                    <h2>Introduction To Readline.js</h2>
+                    <div class="row content">
+                        <div class="col-sm-12">
+                            <p>Readline.js is a core module included in node.js.</p>
+                            <p>Readline is a module that allows reading of a stream on a line-by-line basis. So what does that mean? That means when readline is running, you can track and store inputs from users. How is this usefull? Well, <b>git</b> ready, because we're about to drop some <b>node</b>-ledge on you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 pageSection">
+                    <h2>How to use Readline.js</h2>
+                    <div class="row content">
+                        <div class="col-sm-12">
+                            <p>To use readline.js, you would need to include it in your file.</p>
+                            <div class="indent">
+                                <p>const readline = require('readline');</p>
+                            </div>
+                            <p>Then you have to setup a simple input interface. The interface gives users a place to input values.</p>
+                            <div class="indent">
+                                <p>const rl = readline.createInterface(process.stdin, process.stdout);</p>
+                            </div>
+                            <p>If you don't close the interface, it will continue to run. It needs to be told when to close. To close the interface instance, you need to use the 'close' event. The syntax looks like this:</p>
+                            <div class="indent">
+                                <p>rl.close();</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ex1">
+                <div class="col-sm-10 col-sm-offset-1 pageSection">
+                    <h3>Example 1</h3>
+                    <div class="content">
+                        <p>You can use readline.js to callback input values from users. Here is the syntax:</p>
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 example">
+                                <p>rl.question("what is favourite your colour?", (answer)</p>
+                            </div>
+                        </div>
+                        <p>The prompt is prepended with a query and invokes a callback with the user's response. It displays the query to the user, and then invokes callback with the user's response after it has been typed and entered.</p>
+                        <div class="col-sm-8 col-sm-offset-2 example">
+                        <p>console.log(answer, " is a cool color and I like it!");</p>
+                        </div>
+                        <p class="col-xs-12">The output looks something like.</p>
+                        <div class="row">
+                            <div class="col-sm-12 example">
+                                <img src="images/ex1-out.png" alt="example 1" class="wide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ex2">
+                <div class="col-sm-10 col-sm-offset-1 pageSection">
+                    <h3>Example 2</h3>
+                    <div class="content">
+                        <p>With readline, you don't have to have a query (question). You can simply leave a promt and wait for the user to make an input. The syntax looks like this:</p>
+                        <div class="row">
+                            <div class="col-sm-12 example">
+                                <img class="wide" src="images/ex2-code.png" alt="example3 code">
+                            </div>
+                        </div>
+                        <p>By wrapping ${} (an insertion) around the result of the method "cmd", you can use it inside of a string. The output looks like this:</p>
+                        <div class="row">
+                            <div class="col-sm-12 example">
+                                <img src="images/ex2-out.png" alt="example 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ex3">
+                <div class="col-sm-10 col-sm-offset-1 pageSection">
+                    <h3>Example 3</h3>
+                    <div class="content">
+                        <p>Now, let's take a look at doing something useful. You can setup a promt and let the user type in whatever they want. You can setup readline.js to wait for the user to type in a specific input and respond accordingly.</p>
+                        <p>It's kind of like those old text based commodore 64 games, if you type in the right input, something will happen.</p>
+                        <div class="row">
+                            <div class="col-sm-12 example">
+                                <img class="wide" src="images/ex3-code.png" alt="example3 code">
+                            </div>
+                        </div>
+                        
+                        <p>Readline is waiting for 2 different inputs. If the user types in "hello", readline will output "OLA!". If the user types in "close", readline outputs "Have a gread day!" and then it will close itself. Any other input will have a default responce of "Sorry, I dont know what (user input) means".</p>
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 example">
+                                <img class="wide" src="images/ex3-out.png" alt="example 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Created by Jordan Koski and Dylan Griffiths</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        function scrollToTop() {
+            $("html, body").animate({scrollTop:0},"slow");
+            return false;
+        }
+        
+        function scrollToIntro() {
+            $('html, body').animate({ scrollTop: $('.intro').offset().top -40 }, 'slow');
+            return false;
+        }
+
+        function scrollToEx1() {
+            $('html, body').animate({ scrollTop: $('.ex1').offset().top -40 }, 'slow');
+            return false;
+        }
+
+        function scrollToEx2() {
+            $('html, body').animate({ scrollTop: $('.ex2').offset().top -40 }, 'slow');
+            return false;
+        }
+
+        function scrollToEx3() {
+            $('html, body').animate({ scrollTop: $('.ex3').offset().top -40 }, 'slow');
+            return false;
+        }
+        
+    </script>
+</body>
+
+</html>
