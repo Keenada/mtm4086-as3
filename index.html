@@ -46,7 +46,7 @@
                     <h3>setTimeout(callback , delay[,args][,...])</h3>
                     <p><strong>setTimeout</strong> is used for to execute a single <em>callback</em> after a specified <em>delay</em> in milliseconds. <em>Callback</em> and <em>delay</em> are required arguments and arguments can be pass to the <em>callback.</em></p>
                     <div class="alert alert-warning fade in">
-                        <p><strong>Improtant note:</strong> Node.js doesn't guarantee the execution of callback function when the milliseconds from delay are met.</p>
+                        <p><strong>Important note:</strong> Node.js doesn't guarantee the execution of callback function when the milliseconds from delay are met.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl1">
@@ -77,8 +77,8 @@ clearTimer(timer);
             <div class="row">
                 <div class="col-md-6 col-sm-12 slide-right sr2">
                    <h3>setImmediate(callback[, arg][, ...])</h3>
-                    <p><strong>setImmediate</strong> is used for to execute a single <em>callback</em> after a specified <em>delay</em> in milliseconds. <em>Callback</em> will be excuted afte IO operations but before other Timeout or Interval timers</p>
-                    <p><strong>setImmediate</strong> returns a <em>immediateObject</em> for possiable use with <strong>clearImmediate</strong> later</p>
+                    <p><strong>setImmediate</strong> is used for to execute a single <em>callback</em> after a specified <em>delay</em> in milliseconds. <em>Callback</em> will be excuted after IO operations but before other Timeout or Interval timers</p>
+                    <p><strong>setImmediate</strong> returns a <em>immediateObject</em> for possible use with <strong>clearImmediate</strong> later</p>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl2">
 <pre>
@@ -109,9 +109,9 @@ clearImmediate(time3)
             <div class="row">
                 <div class="col-md-6 col-sm-12 slide-right sr3">
                    <h3>setInterval(callback, delay[, arg][, ...])</h3>
-                    <p> Functions similarily to setTimeOut except that it executes the callback every delay, in milliseconds. You can pass arguments the same way as for the callback</p>
+                    <p> Functions similarily to setTimeOut except that it executes the callback every delay, in milliseconds. You can pass arguments the same way as the callback</p>
                      <div class="alert alert-warning fade in">
-                        <p><strong>Improtant note:</strong> Actual delay is less then given delay</p>
+                        <p><strong>Important note:</strong> Actual delay is less then given delay</p>
                     </div>
                     <p><strong>setInterval()</strong> also returns an <em>intervalObject</em> for possible use in <strong>clearInterval()</strong> later.</p>
                 </div>
