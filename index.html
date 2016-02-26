@@ -45,7 +45,6 @@
                 <div class="col-md-6 col-sm-12 slide-right sr1">
                     <h3>setTimeout(callback , delay[,args][,...])</h3>
                     <p><strong>setTimeout</strong> is used for to execute a single <em>callback</em> after a specified <em>delay</em> in milliseconds. <em>Callback</em> and <em>delay</em> are required arguments and arguments can be pass to the <em>callback.</em></p>
-                    *Important note: Node.js doesn't guarantee the execution of callback function when the milliseconds from delay are met.
                     <div class="alert alert-warning fade in">
                         <p><strong>Improtant note:</strong> Node.js doesn't guarantee the execution of callback function when the milliseconds from delay are met.</p>
                     </div>
@@ -61,11 +60,11 @@ setTimeOut(function(str1, str2){
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12 slide-right sr2">
+                <div class="col-md-6 col-sm-12 slide-right sr1">
                     <h3>clearTimer(timeoutObject)</h3>
                     <p>This function will prevent a timer from executing another time and release the object from memory.</p>
                 </div>
-                <div class="col-md-6 col-sm-12 slide-left sl2">
+                <div class="col-md-6 col-sm-12 slide-left sl1">
 <pre>
 var timer = setTimeOut(function(str1, str2){
 	console.log(str1 + “ ” + str2);			
@@ -76,32 +75,63 @@ clearTimer(timer);
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-6 col-sm-12 slide-right sr2">
+                   <h3>setImmediate(callback[, arg][, ...])</h3>
+                    <p><strong>setImmediate</strong> is used for to execute a single <em>callback</em> after a specified <em>delay</em> in milliseconds. <em>Callback</em> will be excuted afte IO operations but before other Timeout or Interval timers</p>
+                    <p><strong>setImmediate</strong> returns a <em>immediateObject</em> for possiable use with <strong>clearImmediate</strong> later</p>
+                </div>
+                <div class="col-md-6 col-sm-12 slide-left sl2">
+<pre>
+var i = 0;			
+var timer3 = setImmediate(function(str){
+	console.log(str);
+}, 1000, "Hello, World");	
+});
+</pre>
+               <p>This code will print <em>Hello, World</em> to the console. This will exicute before other timers.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 slide-right sr2">
+                    <h3>clearImmediate(immediateObject)</h3>
+                    <p>This function will prevent a timer from executing another time and release the object from memory.</p>
+                </div>
+                <div class="col-md-6 col-sm-12 slide-left sl2">
+<pre>
+var time3 = setImmediate(function(){
+    console.log("Hello World");
+});
+clearImmediate(time3)
+</pre>
+                    <p>This code will print <em>Hello World</em> to the console then remove the <em>time3</em> from memory.</p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6 col-sm-12 slide-right sr3">
-                    <h3>setInterval(callback , delay[,args][,...])</h3>
-                    <p>Functions similarly to setTimeout except that it executes the callback every delay milliseconds. You can pass arguments the same way as for the callback.</p>
-                    <div class="alert alert-warning fade in">
-                        <p><strong>Improtant note:</strong> Actual delay is less than given delay.</p>
+                   <h3>setInterval(callback, delay[, arg][, ...])</h3>
+                    <p> Functions similarily to setTimeOut except that it executes the callback every delay, in milliseconds. You can pass arguments the same way as for the callback</p>
+                     <div class="alert alert-warning fade in">
+                        <p><strong>Improtant note:</strong> Actual delay is less then given delay</p>
                     </div>
                     <p><strong>setInterval()</strong> also returns an <em>intervalObject</em> for possible use in <strong>clearInterval()</strong> later.</p>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl3">
 <pre>
-var i = 0;	
-setInterval(function(i){
-    console.log(i);
-     i++;
-			
-}, 1000, i);	
+var i = 0;			
+var timer2 = setInterval(function(i){
+	console.log(i);
+	i++;			
+}, 1000, i);
 </pre>
-                    <p>This code will print <em>i</em> to the console then add 1 to <em>i</em>. Repeat ad nauseum.</p>
+               <p>This code will print <em>i</em> to the console then add 1 to <em>i</em>. Repeat ad nauseum.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12 slide-right sr4">
+                <div class="col-md-6 col-sm-12 slide-right sr3">
                    <h3>clearInterval(intervalObject)</h3>
                     <p><strong>setInterval()</strong> also returns an <em>intervalObject</em> for possible use in <strong>clearInterval()</strong> later.</p>
                 </div>
-                <div class="col-md-6 col-sm-12 slide-left sl4">
+                <div class="col-md-6 col-sm-12 slide-left sl3">
 <pre>
 var i = 0;			
 var timer2 = setInterval(function(i){
@@ -122,6 +152,7 @@ $(“button”).on('click', function(){
     <footer>
         <p>Coded by Chris James &amp; Matthew Sanford</p>
     </footer>
+    <div style="height: 60vh"></div>
 </body>
 
 </html>
