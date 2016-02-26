@@ -1,31 +1,148 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>MTM4086 - Node Modules</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="styles/styles.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet'>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Node.js Console Module</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<div class="back"></div>
-	<div class="container">
-    	<header class="main">
-        	<section>
-                <h2>MTM4086</h2>
-                <h1>Node Modules</h1>
-            </section>
-        </header>
-        
-        <iframe src="menu.html">
-        </iframe>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <img src="images/nodejs.png">
+            <h1 class="display-3">Console Module</h1>
+            <p class="lead">Don’t cha wish your module was awesome like mine? </p>
+        </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What is Node?</h2>
+                <p>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. It is an open source, asynchronous framework that is used for developing web applications. </p>
+                <p>To use the console module, you have to <a href="https://nodejs.org/en/download/">install Node.js</a> and then check if it got installed properly by typing in node -v into your command processor to check for the installed version number. </p>
+            </div>
+            <div class="col-md-12">
+                <h2>What is Console Module?</h2>
+                <p>Console module is a debugging console where it is used often as Node’s output functionality to display messages and errors. </p>
+                <p>It is similar to the Javascript console log that people are familiar with in the web browsers. While the API for the console class in Node.js is similar to the web browser, it was not intended to duplicate the browser’s functionality.</p>
+                <p>Right away after installing Node.js, the console module is available to us globally and we can use this to log messages into the console. Since node.js is working on the server side, it will write to stdout and stderr. stdout is the file where normal output messages are stored and stderr is the file where error messages are stored.
+                </p>
+                <h4>Node.js Example</h4>
+                <div class="col-md-6 example">In an empty .js file, type in
+                    <br><code>console.log("Hello Everyone");</code>
+                </div>
+                <div class="col-md-6 example"><img src="images/ex-1.png"></div>
+                <div class="col-md-6 example">This string, "Hello Everyone" will show up in the Terminal if you call on it with node and then the script file name
+                    <br><code>node node_console.js</code></div>
+                <div class="col-md-6 example"><img class="extrapadding" src="images/ex-2.png"></div>
+                <h4>Web Browser Example</h4>
+                <div class="col-md-6 example">In an empty .js file, type in
+                    <br><code>console.log("For example...");</code></div>
+                <div class="col-md-6 example"><img src="images/ex-3.png"></div>
+                <div class="col-md-6 example">Activate the debugger software on the web browser and navigate to the Console tab to see the results</div>
+                <div class="col-md-6 example"><img src="images/ex-4.png"></div>
+            </div>
+            <div class="col-md-12">
+                <h2>Console Module Components</h2>
+                <p>The console module exports two different components:
+                    <ol>
+                        <li>A console class such as console.log( ), console.error( ), and console.warn( ) that can be written to any Node.js stream</li>
+                        <li>
+                            A global instance will write to stdout, stderr and can be used without attaching the require ‘console’</li>
+                    </ol>
+                </p>
+
+                <div class="col-md-6 example">
+                    <h4>Console Class Example</h4>
+                    <p>
+                        Define the variables.
+                        <br>
+                        <code>const out = getStreamSomehow();</code>
+                        <br>
+                        <code>const err = getStreamSomehow();</code>
+                        <br>
+                        <code>const myConsole = new console.Console(out, err);
+                        </code>
+                    </p>
+                    <p>This will print "Hello Everyone" to out
+                        <br>
+                        <code>myConsole.log('Hello Everyone');</code></p>
+
+                    <p>This will print [Error: This is not allowed], to err
+                        <br>
+                        <code>myConsole.error(new Error('This is not allowed'));</code></p>
+
+                </div>
+
+                <div class="col-md-6 example">
+                    <h4>Global Instance Example</h4>
+                    <p>This will print "Hello Everyone" to stdout
+                        <br>
+                        <code>console.log('Hello Everyone');</code></p>
+
+                    <p>This will print [Error: This is not allowed], to stderr
+                        <br>
+                        <code>console.error(new Error('This is not allowed'));</code></p>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h2>Console Module Classes</h2>
+                <p>There are two methods to access console classes that can be written to Node.js output streams.</p>
+                <pre>const Console = require('console').Console;
+const Console = console.Console;</pre>
+                <p>Click on individual console classes for more information:</p>
+                <ul>
+                    <li><a href="https://nodejs.org/api/console.html#console_new_console_stdout_stderr">new Console(stdout[, stderr])</a></li>
+
+                    <li><a href="https://nodejs.org/api/console.html#console_console_assert_value_message">console.assert(value[, message][, ...])</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_dir_obj_options">console.dir(obj[, options])</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_error_data">console.error([data][, ...])</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_info_data">console.info([data][, ...])</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_log_data">console.log([data][, ...])</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_time_label">console.time(label)</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_timeend_label">console.timeEnd(label)</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_trace_message">console.trace(message[, ...])</a></li>
+                    <li><a href="https://nodejs.org/api/console.html#console_console_warn_data">console.warn([data][, ...])</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+</div>
+    <!--End of container-->
+        <footer>
+            <h5>References</h5>
+            <p><a href="https://nodejs.org/api/console.html">Node.js Documentation</a>
+                <br>
+                <a href="https://docs.nodejitsu.com/articles/getting-started/the-console-module">Nodejitsu Article</a>
+                <br>
+<a href="http://www.lynda.com/Node-js-tutorials/Node-js-Essential-Training/417077-2.html">Node.js Essential Training (Lynda.com)</a>
+            </p>
+
+            <h6>This page was created by Eileen Xue</h6>
+        </footer>
     
-<script>
-	document.querySelector("header section").onclick = function(){
-		document.querySelector("iframe").src = "menu.html";
-	}
-</script>
+
+
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="scripts/begin.js"></script>
 </body>
+
 </html>
