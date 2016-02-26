@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <title>Node.Js Assignment 3</title>
+    <meta name="author" content="Sami Malik">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  </head>
+  <body>
+    
+<div class="container">   
+    
+    
+    <div class="collapse" id="exCollapsingNavbar">
+  <div class="bg-inverse p-a-1">
+    <h4>Collapsed content</h4>
+<!--    -->
+  </div>
+</div>
+   
+    <nav class="navbar navbar-light bg-faded">
+     <h1>Node Modules Site</h1>
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+        &#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://nodejs.org">Learn Node.Js</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://nodejs.org/api/modules.html">Other Modules</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+   
+
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-3">Don't Cha Node!</h1>
+    <p class="lead">All stories have major events..This is the main event.</p>
+    </div>
+    </div>
+    
+<!--
+    
+    <div class="jumbotron">
+  <h1 class="display-3">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="m-y-2">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+-->
+    
+    <div class="row">
+
+        <div class="col-lg-12">
+            
+            <h1>What is EventEmitter?</h1>
+            
+            <p>The event emitter is a class inside Node core used to create applications based off events. An event handler is triggered by an event listener which is waiting for an event to occur such as a “click”, “tap”, or “timer-off”. The event emitter function is fundamental to almost any dynamic application where multiple things can be happening simultaneously.</p>
+            
+            <p>The way Node (or JavaScript language) works is that it’s almost always based off events that occur which cause the application to flow further along. For example: it can be thought of as a story; an application must have a start and end but events happen in between which progress the story forward, before finally arriving to the end scene. For ex: an event listener can be “buzz, buzz, buzz” (it’s a doorbell). The application has been listening for this event so that an action can be completed once someone rings the doorbell. The application sets of another event handler which triggers the camera to “on” in order to visually identify who is at the front door by displaying a live feed inside a web application to a home owner using an iPad. Node is also a bit different (slightly more advanced) than JavaScript since you are able to emit events without having a user interact with the application and are able to trigger events without any user interaction. </p>
+            
+            <h2>Let's Dive In!</h2>
+            
+            <p>In order to start using the eventEmitter class you must include the “Events” module. </p>
+            
+            <span class="snippet">const StartUsingEventEmitter = require('events');<br></span>
+            
+            <br>
+            
+            <p>Here we will go through an example of the EventEmitter class being used to trigger an event once a timer has completed. In order to begin using the methods associated with the EventEmitter class we need to set a new “event emitter” object which we call myCookingTimer. </p>
+            
+            <span class="snippet">var MyEventEmitter = require("events").EventEmitter; <br>
+var myCookingTimer = new EventEmitter();<br><br> </span>
+           
+           <p>Here we are listening for the event “SwitchOvenOff” to be fired by some other part of the application. This function is using one of the two main methods part of the event emitter class. One being the “on” method which is now actively listening for the “SwitchOvenOff” event.</p>
+
+           
+            <p>This function takes two parameters the first one is the event listener which we can call anything like previously stated this could be a “click”, “tap” etc.. in our case: switch the oven off event. We also have a second parameter which is the name of the event handler or function that will run after an event has occurred. </p>
+            
+            <span class="snippet">myCookingTimer.on('SwitchOvenOff', function(TodaysDinner) {<br>
+alert(“Dinner is Served we are having: ” + TodaysDinner );<br>
+	OvenOff();<br>
+});</span><br><br>
+           
+           <h2>Putting it all together</h2>
+           
+           <p>Once the event listener has been initialized properly, we set-off the timer and are waiting for the timer to complete. After about 30 minutes as in our case, the “emit” method will fire off an event with the name of whatever value we have defined as our first parameter (“SwitchOvenOff”). As you notice this is the same name we have set in the previous step, that is so our event listener knows what to listen for, it may be true that you have multiple events inside an application. Thus, preventing all the different events to go off at the same time.  
+
+In the second field we can add an additional parameter, since we have decided to cook “chicken” we are passing a variable back to the function so that we can do additional things with that information. </p>
+
+           <span class="snippet">setInterval ( function(chicken) {<br>
+myCookingTimer.emit ('SwitchOvenOff', chicken);<br>
+}, 45000); </span><br><br>
+           
+           <p>This also brings us to another method of the Event Emitter class. That is the “once” method. It is called once and only once. It will prevent any events in the future from doing their job pertaining to that particular event. Node knows to only call that event once and any future events of it will not initiate a call back function. </p>
+           
+           <span class="snippet">myEventEmitter.once("SomethingHasHappend", function () {<br>
+ alert("I'm only seen once!"); <br>
+}); </span><br><br>
+           
+           <p>There may also be a case where you want to remove an event listener. We have a method called “removeListener”. We use it the same was ay we would when we set an event listener with two parameters. Once again the first parameter holds the name/kind of “event” we want to stop listening for and the second parameter is the callback function. 
+</p>
+            
+        </div>
+     
+     <div class="container text-center">
+    <hr />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Learn More</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">More About Modules</a></li>
+          <li><a href="#">Why Choose Node.js?</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">Other Documents</a></li>
+          <li><a href="#">Cheat Sheet</a></li>          
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#">About Page</a></li>
+          <li><a href="#">Contact Me!</a></li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+  <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li>2016 Sami Malik's Educational Resource Site.</li>
+                <li>Head Quarters based in Ottawa.</li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+     
+     <br>
+      
+    
+    </div>        
+</div>      
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+<!--thanks to subtlepatterns for the wallpapers. -->
+<!--http://www.sitepoint.com/nodejs-events-and-eventemitter/ used as a reference-->
+<!--sources and references made off the node.js website and also sitepoint.com https://nodejs.org/api/events.html-->

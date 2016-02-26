@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    
+    background-image: url(../images/wov.png);
+    
+}
+
+.container {
+    
+      background-color: white;
+    
+}
+
+nav h1 {
+    
+    color:slategray;
+    
+}
+
+.container {
+    
+       
+}
+
+.snippet {
+     
+   
+    
+/*    padding-bottom:20px;*/
+    background-color: lightcyan;
+    border-top: dashed 2px lightblue;
+/*    color:white;*/
+    font-weight: 500;
+    
+    
+/*    border: 1px solid skyblue;*/
+    
+}
+
+.jumbotron {
+    
+    background-image: url(../images/1.jpg);
+    background-position:bottom;
+    color:slateblue;
+    box-shadow: 0 5px 0px #222;
+    
+    
+}
+
+.display-3 {
+    
+    
+    
+}
+
+h2 {
+    
+    padding-top:35px;
+    
+    
+}
