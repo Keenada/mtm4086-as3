@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+}
+
+p{
+    color: #65B0A7;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+.panel-body h5{
+    font-size: 20px;
+    color: #7b7b7b;
+}
+
+.panel-heading{
+    
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+
+body{
+    background-color: #fafafa!important;
+}
+
+span{
+    font-weight: 700;
+    color: #ED6F23;
+}
+
+a{
+    color: #65B0A7;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+h4 a:hover{
+    color: #A5A05F;
+    text-decoration: none;
+}
+
+header{
+   font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: #ED6F23;
+    padding:20px;
+    border-bottom: 4px solid #959595;
+    
+}
+
+header img{
+    max-width: 1000px;
+    width: 100%;
+}
+
+#accordion{
+    margin-top: 30px;
+}
+
+.intro p{
+    font-size: 22px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.intro{
+    padding: 10px;
+}
+
+.crashcourse p{
+    text-align: center;
+    font-size: 17px;
+    color: grey;
+}
+.main{
+    font-size: 16px;
+    color: #A5A05F;
+}
+.crashcourse{
+    border: 2px dotted #A5A05F;
+    padding: 10px;
+}
+
+.icon img{
+    width: 200px;
+    align-content: center;
+}
+
+.icon{
+    margin: 0 auto;
+    width: 200px;
+}
+
+footer{
+    margin-top: 50px;
+    height:80px;
+    background-color: #A5A05F;
+    text-align: center;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 40px;
+}

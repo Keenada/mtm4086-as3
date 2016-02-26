@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+
+  
+<div class="container">
+  <header class="main"><img src="images/header.png"><br> Presented by Kendall and Vivian</header> 
+    
+    <div class="intro">
+<p>The core node module <span>path</span> is vital to creating portable code. It lets you manipulate and navigate through directories and their arrays without having to worry about which platform your code will be run on. To include this module, use require('path').
+If you don’t want your code breaking on you, read on!</p> <br>
+    </div>
+    
+   
+    <div class="crashcourse">
+<p>Crash Course in Representation of Paths by operating systems:
+<br> <br>
+Unix-like Systems:  ex. /foo/bar/baz/asdf.exe; <br>
+			Root: space to left most slash <br>
+			Directories: foo, bar, baz <br>
+			Basename: asdf (could be directory or file, in this case it’s a file) <br>
+			Extension: .exe <br>
+			Directory Seperator: ‘/’  <br>
+			Path Seperator: ‘;’ <br>
+<br>
+Windows:  ex. C:\\foo\\bar\\baz\\asdf.exe: <br>
+			Root: C: <br>
+			Directories: foo, bar, baz <br>
+			Basename: asdf (could be directory or file, in this case it’s a file) <br>
+			Extension: .exe <br>
+			Directory Seperator: ‘\’ <br>
+			Path Seperator: ‘:’</p>
+        
+        <div class="icon"><img src="images/path_icons.png"></div>
+    </div>
+    
+     
+    
+  <div class="panel-group" id="accordion">
+      <header class="method">Methods</header>
+<!--path normalize-->       
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">path.normalize()</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <h5>path.normalize() function normalizes a given path by collapsing (or removing) redundant separators and up-level references. It accepts only one argument which is a path. It takes a path containing ‘..’ or ‘./’ and returns it without any of the ‘..’ or ‘./’. </h5>
+
+<p>ex. path.normalize('/foo/bar//baz/asdf/quux/..')
+// returns
+'/foo/bar/baz/asdf'
+            </p>
+</div>
+      </div>
+    </div>
+      
+    <!--path join-->  
+    <div class="panel panel-default">
+      <div class="panel-heading titles">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">path.join()</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body"><h5>path.join() joins all given paths and normalizes them. It accepts multiple arguments. All paths that need to be joined together are given as arguments. </h5>
+          <p>ex. path.join('/foo', 'bar', 'baz/asdf', 'quux', '..')
+// returns
+'/foo/bar/baz/asdf'
+</p></div>
+      </div>
+    </div>
+    
+<!--path resolve-->      
+    <div class="panel panel-default">
+      <div class="panel-heading titles">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">path.resolve()</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5>path.resolve() returns an absolute path. It accepts multiple arguments. The last argument is the path to which a path needs to be calculated from another path. Any of the arguments before the last argument are optional and joined to form a path from which a path is calculated to the last argument. If the last argument is absolute, it will return the last argument.
+            If the first argument is not absolute, this function returns a path calculated by joining all arguments at the end of the current working directory.</h5>
+          <p></p>
+          </div>
+      </div>
+    </div>
+      
+      <!--path relative-->
+      <div class="panel panel-default">
+      <div class="panel-heading titles">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">path.relative()</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5>path.relative() calculates a relative path between two absolute paths. It requires two arguments. The first argument is the absolute path from which a relative path has to be calculated. The second argument is the absolute path to which a relative path has to be calculated. </h5>
+          <p>ex. path.relative('/data/orandea/test/aaa', '/data/orandea/impl/bbb')
+// returns
+'../../impl/bbb'
+</p>
+          </div>
+      </div>
+    </div>
+      
+    <!--path dirname-->  
+      <div class="panel panel-default">
+      <div class="panel-heading titles">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">path.dirname()</a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5>path.dirname() returns the path of the parent directory of a given path. It requires only one argument which is the path whose parent directory is required. </h5>
+          <p>ex. path.dirname('/foo/bar/baz/asdf/quux')
+// returns
+'/foo/bar/baz/asdf' 
+</p>
+          </div>
+      </div>
+    </div>
+      <!--path basename-->
+       <div class="panel panel-default">
+      <div class="panel-heading titles">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">path.basename()</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5>path.basename() returns the last part of a path which is usually the file name. It accepts two arguments – the first argument is the path whose last part needs to be returned, the second argument is optional and is the extension. If an extension is given, path.basename() will return the file name in a path without the specified extension.  </h5>
+          <p>ex. path.basename('/foo/bar/baz/asdf/quux.html')
+// returns
+'quux.html'
+
+</p>
+          </div>
+      </div>
+    </div>
+      
+    <!--path isAbsolute-->  
+      <div class="panel panel-default">
+      <div class="panel-heading titles">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">path.isAbsolute()</a>
+        </h4>
+      </div>
+      <div id="collapse7" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5> Determines whether path is an absolute path. An absolute path contains the root directory and all other subdirectories in which a file or folder is contained. The absolute path will always lead to the same location, regardless of the working directory (whereas the working directory affects the relative path). </h5>
+          <p> ex: path.isAbsolute('/foo/bar') // true
+path.isAbsolute('/baz/..')  // true
+path.isAbsolute('qux/')     // false
+path.isAbsolute('.')        // false
+
+path.isAbsolute('//server')  // true
+path.isAbsolute('C:/foo/..') // true
+path.isAbsolute('bar\\baz')  // false
+path.isAbsolute('.')         // false
+</p>
+          </div>
+      </div>
+    </div>
+      
+      <!-- path extname-->
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">path.extname()</a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5>The purpose of this method is to return the extension of a path, from the last '.' to end of string in the last portion of the path. If there is no '.' in the last portion of the path or the first character of it is '.', then it returns as ‘ ’.  </h5>
+          <p> Ex. 
+
+Case 1: Returns from the last ‘.’ to the end of the string
+path.extname('picasso.html')<br>
+/ returns
+'.html'
+<br>
+path.extname('index.picasso.md')
+/ returns
+'.md'
+<br>
+path.extname('picasso.')
+/ returns
+'.'
+<br>
+
+Case 2:  No ‘.’ in the last portion of the path, or the first character is ‘.’
+<br>
+path.extname('picasso')
+/ returns
+''
+<br>
+path.extname('.picasso')
+/ returns
+''
+</p>
+          </div>
+      </div>
+    </div>
+      
+      <!--path parse-->
+  <div class="panel panel-default">
+  <div class="panel-heading titles">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">path.parse(pathString)
+
+ </a>
+    </h4>
+  </div>
+  <div id="collapse9" class="panel-collapse collapse">
+    <div class="panel-body">
+      <h5>path.parse() returns an object from a path string, breaking the path into its different components: root, directory, base, extension, name. </h5>
+      <p>
+Ex.
+
+ On *nix (Unix-like system):
+<br>
+path.parse('/home/user/dir/picasso.txt')
+/ returns
+{
+    root : "/",
+    dir : "/home/user/dir",
+    base : "picasso.txt",
+    ext : ".txt",
+    name : "picasso"
+}
+<br>
+On Windows
+<br>
+path.parse('C:\\path\\dir\\picasso.txt')
+/ returns
+{
+    root : "C:\\",
+    dir : "C:\\path\\dir",
+    base : "picasso.txt",
+    ext : ".txt",
+    name : "picasso"
+}
+ </p>
+      </div>
+  </div>
+</div>      
+
+      <!--path format-->
+<div class="panel panel-default">
+  <div class="panel-heading titles">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">path.format(pathObject)
+ </a>
+    </h4>
+  </div>
+  <div id="collapse10" class="panel-collapse collapse">
+    <div class="panel-body">
+      <h5>path.format() returns a path string from an object. It is the result of path.parse. </h5>
+      <p>On *nix (Unix-like system): <br>
+{
+    root : "/",
+    dir : "/home/user/dir",
+    base : "picasso.txt",
+    ext : ".txt",
+    name : "picasso"
+}
+
+/ returns
+'/home/user/dir/picasso.txt'
+
+<br>
+On Windows <br>
+{
+    root : "C:\\",
+    dir : "C:\\path\\dir",
+    base : "picasso.txt",
+    ext : ".txt",
+    name : "picasso"
+
+}
+/ returns
+'C:\\path\\dir\\picasso.txt'
+
+
+ </p>
+      </div>
+  </div>
+</div>      
+      <header class="properties">Properties</header>
+    <!--path sep-->  
+<div class="panel panel-default">
+  <div class="panel-heading titles">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">path.sep
+
+ </a>
+    </h4>
+  </div>
+  <div id="collapse11" class="panel-collapse collapse">
+    <div class="panel-body">
+      <h5> path.sep is the platform-specific file separator.
+        
+Each operating system uses a different file path separator for identifying and/or creating file paths.
+UNIX-like systems use the forward slash, and Windows uses the backslash. Unfortunately, most Windows applications cannot handle the forward slash. 
+As a fix to the cross-platform path separator problem, Node provides the sep property of the path module. Sep is used when building directory paths because it determines what file separator is needed based on the OS. An example appears below:
+</h5>
+      <p> Ex.
+          On *nix:<br>
+'foo/bar/baz'.split(path.sep)
+/ returns
+['foo', 'bar', 'baz']
+<br>
+On Windows: <br>
+'foo\\bar\\baz'.split(path.sep)
+// returns
+['foo', 'bar', 'baz']
+<br>
+          In this example, Node determines which separator is being used, where it occurs, and breaks the path into its directories.
+
+ </p>
+      </div>
+  </div>
+</div>      
+      
+      <!--path delimiter-->
+      <div class="panel panel-default">
+  <div class="panel-heading titles">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">path.delimiter
+ </a>
+    </h4>
+  </div>
+  <div id="collapse12" class="panel-collapse collapse">
+    <div class="panel-body">
+      <h5> The platform-specific path delimiter which looks for ‘;’ or ':,' and splits the path at each instance. Each operating system uses a different path separator for identifying paths in a path environment variable. The path environment variable is a colon-separated list of directories in which the shell will look when it tries to find an executable file that matches a command name. 
+UNIX-like systems use the colon, and Windows uses the semi-colon.
+Node provides the delimiter property of the path module to correctly parse out the paths for the path variable, regardless of the operating-system that it’s running from.
+ </h5>
+      <p>
+          Ex. On *nix (‘:’): <br>
+console.log(process.env.PATH)
+// '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin'
+
+process.env.PATH.split(path.delimiter)
+/ returns
+['/usr/bin', '/bin', '/usr/sbin', '/sbin', '/usr/local/bin']
+<br>
+On Windows (‘;’):<br>
+console.log(process.env.PATH)
+// 'C:\Windows\system32;C:\Windows;C:\Program Files\node\'
+
+process.env.PATH.split(path.delimiter)
+// returns
+['C:\\Windows\\system32', 'C:\\Windows', 'C:\\Program Files\\node\\']
+ </p>
+      </div>
+  </div>
+</div>      
+
+<!--path posix-->
+<div class="panel panel-default">
+  <div class="panel-heading titles">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse13">path.posix
+
+ </a>
+    </h4>
+  </div>
+  <div id="collapse13" class="panel-collapse collapse">
+    <div class="panel-body">
+      <h5> Provide access to the path methods mentioned but always interact in a posix compatible way.
+POSIX: Portable Operating System Interface, a set of standards specified for maintaining compatibility between operating systems which defines the application programming interface (API), along with command line shells and utility interfaces, for software compatibility with variants of Unix and other operating systems. </h5>
+      <p>
+        </p>
+      </div>
+  </div>
+</div>      
+
+<!--path win32-->
+<div class="panel panel-default">
+  <div class="panel-heading titles">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse14">path.win32
+
+ </a>
+    </h4>
+  </div>
+  <div id="collapse14" class="panel-collapse collapse">
+    <div class="panel-body">
+      <h5> Provide access to path methods mentioned but always interact in a win32 compatible way.
+
+Win32: the main set of Microsoft Windows APIs used for developing 32-bit applications, used for functions in things like diagnostics, security and Windows UI
+</h5>
+      <p>
+        </p>
+      </div>
+  </div>
+</div>      
+
+      
+      
+      
+      
+      
+      
+  </div> 
+</div>
+    <footer>Paths in Node.js was presented to you by Kendall and Vivian</footer>
+</body>
+</html>
