@@ -18,8 +18,8 @@ $(document).ready(function(){
                 $('.sr2').animate({
                     opacity:1
                 },1500);
-            } else if (scroller < 1500) {
-                maxHeight = 1800;
+            } else if (scroller < 1200) {
+                maxHeight = 1750;
                 $('.sl3').animate({
                     opacity:1
                 },1500);
