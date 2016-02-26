@@ -1,0 +1,396 @@
+@font-face {
+    font-family: 'droid_sansregular';
+    src: url('../font/droidsans_regular_macroman/DroidSans-webfont.eot');
+    src: url('../font/droidsans_regular_macroman/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/droidsans_regular_macroman/DroidSans-webfont.woff') format('woff'),
+         url('../font/droidsans_regular_macroman/DroidSans-webfont.ttf') format('truetype'),
+         url('../font/droidsans_regular_macroman/DroidSans-webfont.svg#droid_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body, html {
+	height: auto;
+	width: 100%;
+  	background: center #000;
+	letter-spacing: 0.03em;
+	font-size: 1.2em;
+}
+
+br {
+	margin: 20px;
+}
+
+.codes {
+	background-color: none;
+	border-radius: 10px
+	border: 1px dashed #80bd01;
+	color: #80bd01;
+	font-style: italic;
+	list-style: none;
+}
+
+h2 {
+	text-align: center;
+	padding: 5px;
+	text-align: left !important;
+	font-family: 'droid_sansregular', arial, impact;
+	font-size: 1.4em !important;
+	color: #eee!important;
+}
+
+.p2 {
+	color: #ddd;
+	list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
+.screenshot {
+	background: no-repeat url(../images/screencode.png);
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.fa {
+	color:;
+}
+
+.footH2 {
+	color: #000;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+a, a:link, a:active {
+    color: #80bd01;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.linuxfoundation-logo {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9z…yMy42MDQtLjIzLjIzIDAgLjQ2LjA2Mi42ODYuMTg3IiBmaWxsPSIjMzA5MjQ1Ii8+PC9zdmc+") no-repeat -10px center;
+    width: 100%;
+    font-size: 2em;
+    color: #fff;
+    max-width: 420px;
+    text-indent: -9000px;
+}
+header {
+	width: 100%;
+	height: 400px;
+}
+
+.logos {
+	background: no-repeat center url(../images/nodejs-new-white-pantone.png);
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	top: 0;
+}
+
+.border2header {
+	border-top: solid 10px #ff9900;
+	width: 100%;
+}
+#wrapper {
+	width: 100%;
+}
+
+.container, .second {
+	width: 100%;
+	clear: both;
+	background-color: #000;
+	padding-top: 20px;
+	max-width: none !important;
+}
+
+.bolded {
+	font-size: 2em;
+	color: #80bd01;
+}
+
+.topper {
+	color: #80bd01;
+	text-shadow: 2px 2px #000;
+	text-align: left;
+	padding-bottom: 5px;
+	font-size: 2.4em;
+	font-family: arial, 'droid_sansregular', impact;
+}
+
+.topcont {
+	background: center rgba(0,0,0,0.65);
+	height: auto;
+	width: 70%;
+	padding: 4px;
+}
+
+.headp {
+	font-size: 0.8em;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	color: #ddd;
+}
+
+.carousel-item img {
+	margin: 0 auto;
+	z-index: 1;
+	width: 100vw;
+	height: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-position: 65% center;
+	background-size: cover;
+	position: relative;
+}
+
+.carousel-indicators {
+	margin-bottom: 2px;
+}
+
+.calendar {
+	margin:0 auto;
+}
+
+.overslide {
+	top:15%;
+	font-size: 100%;
+	background: transparent center center;
+	z-index: 10000;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	position: absolute;
+}
+
+.card {
+	margin: 5px;
+	width:95%;
+	position: absolute;
+	border-radius: 8px;
+}
+
+.card2 {
+	border: 1px dashed #80bd01;
+	margin: 5px;
+	width:95%;
+	position: absolute;
+	border-radius: 8px;
+}
+
+.navbgcolour {
+	background-color: transparent !important;
+	width: 100% !important;
+	height: auto;
+	z-index: 9999;
+	display: block;
+	position: absolute !important;
+}
+
+.navbar {
+	padding: 0 !important;
+}
+
+.nav-link a {
+	color: #fff !important;
+	text-shadow: 1px 1px #000;
+	font-weight: 400;
+	font-size: 1.4em;
+}
+
+.navbar-light a, .navbar-brand {
+	color: #fff !important;
+	text-shadow: 1px 1px #000;
+	font-size: 1.4em;
+}
+
+.navbar-light a:hover .navbar-brand a:hover {
+	color: #ff9900 !important;
+}
+
+.nav-link:hover, .nav-link:focus {
+	color: #fff !important;
+}
+
+.nav {
+	float: none;
+}
+
+.collapse {
+	position: relative;
+	background-color: #fff !important;
+}
+
+.navbar-toggler {
+	float: right;
+	border: 1px solid #fff;
+}
+
+.navbar-toggleable-xs {
+	clear: both;
+}
+
+.navbar-nav .nav-item {
+	float: none;
+}
+
+.navbar-nav .nav-item + .nav-item {
+	margin-left: 0;
+}
+
+.navbar-brand {
+	z-index: 9999;
+	float: left;
+}
+
+.menup {
+	float: right !important;
+	margin-right: 0 !important;
+}
+
+.bg-faded {
+	background-color: transparent !important;
+}
+
+.tux {
+	background: url(../images/icons/tux35.png);
+	width: 30px;
+	height: 35px;
+	float: left;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+.secondNav p {
+	color: #ddd;
+}
+
+.addy {
+	color: #ddd;
+	margin: 0 auto;
+	background-color: transparent;
+}
+
+.card-img-top {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+.img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9, .img10 {
+	width: 130px;
+	height: auto;
+	margin: 0 auto;
+	background: center;
+	vertical-align: center;
+}
+
+.partners {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.tux {
+	color: #fff;
+}
+
+footer {
+	padding: 25px;
+	height: auto;
+	width: 100%;
+	clear: both;
+}
+
+@media(min-width: 768px) {
+	.topper {
+		font-size: 3em;
+	}
+
+	.headp {
+		font-size: 1.3em;
+	}
+
+	h2 {
+		font-size: 2.5em;
+	}
+
+	.footH2 {
+		font-size: 1.4em;
+	}
+
+	.card, .card2 {
+		width: 45% !important;
+	}
+
+	.nav {
+		float: right;
+		margin-right: 15px;
+	}
+
+	.topcont {
+		padding: 15px;
+	}
+
+	.menup {
+		display: none;
+	}
+	/*line breaks for some reason*/
+	.navbar-toggleable-xs {
+		clear: none;
+	}
+}
+
+@media(min-width: 968px) {
+	.topper {
+		font-size: 6em;
+	}
+	
+	h2 {
+		font-size: 3em;
+	}
+
+	.card, .card2 {
+		width: 30% !important;
+	}
+
+	.container {
+		width: 100%;
+		background-color: #000;
+		padding-top: 20px;
+		max-width: none !important;
+	}
+
+	.footH2 {
+		font-size: 3em;
+	}
+
+	.headp {
+		font-size: 3em;
+	}
+}
+
+@media(min-width: 1440px) {
+	.topper {
+		font-size: 8em;
+	}
+
+	h2 {
+		font-size: 4.5em;
+	}
+
+	.footH2 {
+		font-size: 4.5em;
+	}
+
+	.headp {
+		font-size: 4em;
+	}
+}
