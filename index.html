@@ -51,11 +51,12 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl1">
-<pre>setTimeOut(function(str1, str2){
+<pre>
+setTimeOut(function(str1, str2){
     console.log(str1 + “ ” + str2);
 }, 1000, “Hello”, “World”);
 </pre>
-                    <p>This example with print “Hello World” to the console after 1000 milliseconds. SetTimeout returns a timeoutObject for possible use with clearTimer()
+                    <p>This example with print “Hello World” to the console after 1000 milliseconds. <strong>SetTimeout</strong> returns a <em>timeoutObject</em> for possible use with <strong>clearTimer()</strong>
                     </p>
                 </div>
             </div>
@@ -65,7 +66,8 @@
                     <p>This function will prevent a timer from executing another time and release the object from memory.</p>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl2">
-                    <pre>var timer = setTimeOut(function(str1, str2){
+<pre>
+var timer = setTimeOut(function(str1, str2){
 	console.log(str1 + “ ” + str2);			
 }, 1000, “Hello”, “World”);
 clearTimer(timer);
@@ -80,26 +82,28 @@ clearTimer(timer);
                     <div class="alert alert-warning fade in">
                         <p><strong>Improtant note:</strong> Actual delay is less than given delay.</p>
                     </div>
-                    <p>setInterval() also returns an intervalObject for possible use in clearInterval() later.</p>
+                    <p><strong>setInterval()</strong> also returns an <em>intervalObject</em> for possible use in <strong>clearInterval()</strong> later.</p>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl3">
-<pre>var i = 0;	
+<pre>
+var i = 0;	
 setInterval(function(i){
     console.log(i);
      i++;
 			
 }, 1000, i);	
 </pre>
-                    <p>This code will print i to the console then add 1 to i. Repeat ad nauseum.</p>
+                    <p>This code will print <em>i</em> to the console then add 1 to <em>i</em>. Repeat ad nauseum.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12 slide-right sr4">
                    <h3>clearInterval(intervalObject)</h3>
-                    <p>setInterval() also returns an intervalObject for possible use in clearInterval() later.</p>
+                    <p><strong>setInterval()</strong> also returns an <em>intervalObject</em> for possible use in <strong>clearInterval()</strong> later.</p>
                 </div>
                 <div class="col-md-6 col-sm-12 slide-left sl4">
-<pre>var i = 0;			
+<pre>
+var i = 0;			
 var timer2 = setInterval(function(i){
 	console.log(i);
 	i++;			
@@ -109,7 +113,7 @@ $(“button”).on('click', function(){
 	clearInterval(timer2);	
 });
 </pre>
-               <p>This code will print i to the console then add 1 to i. It will repeat until button is pressed.</p>
+               <p>This code will print <em>i</em> to the console then add 1 to <em>i</em>. It will repeat until button is pressed.</p>
                 </div>
             </div>
         </div>
